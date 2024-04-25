@@ -17,12 +17,15 @@ set(PROJECT_SOURCES
         main.cpp
 )
 
+file(GLOB_RECURSE srcs ${PROJECT_SOURCE_DIR}/src/*.cpp)
+file(GLOB_RECURSE headers ${PROJECT_SOURCE_DIR}/src/*.h)
+
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(lifeSimulator
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
-        src/scene/scene.h src/scene/scene.cpp
-        src/scene/mainwindow.h src/scene/mainwindow.cpp
+        ${srcs} ${headers}
+
     )
 else()
     if(ANDROID)
