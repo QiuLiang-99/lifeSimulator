@@ -1,7 +1,6 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include "scene.h"
 #include <QStackedWidget>
 #include <QWidget>
 
@@ -15,7 +14,7 @@ class MainWindow : public QStackedWidget {
     // QStackedWidget* mainWindow;
   signals:
   public slots:
-    void addSence(Scene*);
+    //void addSence(Scene*);
 };
 
 #endif // MAINWINDOW_H
