@@ -5,14 +5,14 @@
 #include <QStackedWidget>
 #include <QWidget>
 
-class MainWindow : public QWidget {
+class MainWindow : public QStackedWidget {
     Q_OBJECT
 
   public:
     explicit MainWindow(QWidget* parent = nullptr);
 
   public:
-    QStackedWidget* mainWindow;
+    // QStackedWidget* mainWindow;
   signals:
   public slots:
     void addSence(Scene*);
