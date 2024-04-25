@@ -11,10 +11,9 @@ class MainWindow : public QStackedWidget {
     explicit MainWindow(QWidget* parent = nullptr);
 
   public:
-    // QStackedWidget* mainWindow;
   signals:
   public slots:
-    //void addSence(Scene*);
+    // void addSence(Scene*);
 };
 
 #endif // MAINWINDOW_H

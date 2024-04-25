@@ -2,6 +2,7 @@
 
 gameSceneManager::gameSceneManager(QObject* parent) : QObject(parent) {
   mainWindow = new MainWindow;
+  mainWindow->show();
 }
 
 void gameSceneManager::showScene(E_scene target) {
@@ -15,5 +16,9 @@ void gameSceneManager::showScene(E_scene target) {
   }
 }
 
-void gameSceneManager::switchScene(Scene*) {
+void gameSceneManager::switchScene(Scene* target) {
+  if (mainWindow->currentWidget() != target) {
+    mainWindow->addWidget(target);
+    mainWindow->setCurrentWidget(target);
+  }
 }
