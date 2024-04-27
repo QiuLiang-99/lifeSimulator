@@ -4,8 +4,8 @@
 #include "gamestartscreen.h"
 #include "mainwindow.h"
 #include "scene.h"
-#include <QDebug>
-#include <QObject>
+
+#include "src/gamemanager.h"
 
 template <typename Tscene>
 Tscene* getInstance() {
@@ -15,19 +15,28 @@ Tscene* getInstance() {
 enum class E_scene {
   start
 };
-class gameSceneManager : public QObject {
+class gameSceneManager : public GameManager {
     Q_OBJECT
 
   public:
     explicit gameSceneManager(QObject* parent = nullptr);
 
   public:
+    inline MainWindow* mainWindow() const {
+      return Window;
+    };
+
+  public:
     void showScene(E_scene);
     void switchScene(Scene*);
   signals:
 
+  protected:
+    // void customEvent(QEvent* event);
+    //  bool eventFilter(QObject *obj, QEvent *event);
+
   private:
-    MainWindow* mainWindow;
+    MainWindow* Window;
 };
 
 #endif // GAMESCENEMANAGER_H

@@ -7,18 +7,18 @@
 
 gameStartScreen::gameStartScreen(QWidget* parent) : Scene(parent) {
   mLayout       = new QGridLayout(this);
-  QLabel* title = new QLabel("人生模拟器");
+  QLabel* title = new QLabel("人生模拟器", this);
   mLayout->addWidget(title, 0, 1);
   title->setAlignment(Qt::AlignCenter);
-  QButtonGroup* startmenu     = new QButtonGroup;
-  QFrame*       btnlist       = new QFrame;
-  QGridLayout*  btnlistLayout = new QGridLayout;
+  QButtonGroup* startmenu     = new QButtonGroup(this);
+  QFrame*       btnlist       = new QFrame(this);
+  QGridLayout*  btnlistLayout = new QGridLayout(this);
   btnlist->setLayout(btnlistLayout);
-  QPushButton* startbtn = new QPushButton("开始游戏");
+  QPushButton* startbtn = new QPushButton("开始游戏", this);
   btnlistLayout->addWidget(startbtn, 0, 0);
   mLayout->addWidget(btnlist, 1, 1);
-  mLayout->addWidget(new QFrame, 0, 0);
-  mLayout->addWidget(new QFrame, 1, 0);
-  mLayout->addWidget(new QFrame, 2, 1);
-  mLayout->addWidget(new QFrame, 1, 2);
+  mLayout->addWidget(new QFrame(this), 0, 0);
+  mLayout->addWidget(new QFrame(this), 1, 0);
+  mLayout->addWidget(new QFrame(this), 2, 1);
+  mLayout->addWidget(new QFrame(this), 1, 2);
 }

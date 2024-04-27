@@ -1,8 +1,8 @@
 #include "gamescenemanager.h"
 
-gameSceneManager::gameSceneManager(QObject* parent) : QObject(parent) {
-  mainWindow = new MainWindow;
-  mainWindow->show();
+gameSceneManager::gameSceneManager(QObject* parent) : GameManager(parent) {
+  Window = new MainWindow;
+  Window->show();
 }
 
 void gameSceneManager::showScene(E_scene target) {
@@ -17,10 +17,10 @@ void gameSceneManager::showScene(E_scene target) {
 }
 
 void gameSceneManager::switchScene(Scene* target) {
-  if (mainWindow->currentWidget() == target) {
+  if (Window->currentWidget() == target) {
     qDebug() << "same scene!";
     return;
   }
-  mainWindow->addWidget(target);
-  mainWindow->setCurrentWidget(target);
+  Window->addWidget(target);
+  Window->setCurrentWidget(target);
 }
