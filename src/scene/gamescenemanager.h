@@ -31,6 +31,7 @@ class gameSceneManager : public GameManager {
 
   private:
     MainWindow* Window;
+    // currentScene
 };
 
 #endif // GAMESCENEMANAGER_H

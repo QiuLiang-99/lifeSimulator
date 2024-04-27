@@ -3,7 +3,7 @@
 #include "gamemanager.h"
 #include "src/scene/E_scene.h"
 #include <QObject>
-
+// todo 继承而不是派生
 class MsgPasser : public QObject {
     Q_OBJECT
 
@@ -11,9 +11,9 @@ class MsgPasser : public QObject {
     explicit MsgPasser(QObject* parent = nullptr);
 
     // test private:
-    GameManager* target;
+    // GameManager* target;
 
-  public:
+  public: // test need to fix name
     void connect(GameManager*);
   signals:
     void switcheScene(E_scene);

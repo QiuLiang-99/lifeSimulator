@@ -23,7 +23,7 @@ gameStartScreen::gameStartScreen(QWidget* parent) : Scene(parent) {
   mLayout->addWidget(new QFrame(this), 2, 1);
   mLayout->addWidget(new QFrame(this), 1, 2);
   connect(startbtn, &QPushButton::clicked, this, [] {
-    Scene::sceneMessenger->target->test();
+    // Scene::sceneMessenger->target->test();
     emit Scene::sceneMessenger->switcheScene(start);
   });
 }
