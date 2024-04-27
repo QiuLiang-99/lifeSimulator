@@ -6,10 +6,9 @@
 #include "scene.h"
 
 #include "src/gamemanager.h"
+#include <qtmetamacros.h>
 
-enum class E_scene {
-  start
-};
+#include "E_scene.h"
 class gameSceneManager : public GameManager {
     Q_OBJECT
 
@@ -21,7 +20,7 @@ class gameSceneManager : public GameManager {
       return Window;
     };
 
-  public:
+  public slots:
     void showScene(E_scene);
     void switchScene(Scene*);
   signals:

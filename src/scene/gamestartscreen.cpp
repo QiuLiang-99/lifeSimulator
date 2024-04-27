@@ -4,6 +4,7 @@
 #include <QPushButton>
 #include <qframe.h>
 #include <qpushbutton.h>
+#include <qtmetamacros.h>
 
 gameStartScreen::gameStartScreen(QWidget* parent) : Scene(parent) {
   mLayout       = new QGridLayout(this);
@@ -23,5 +24,6 @@ gameStartScreen::gameStartScreen(QWidget* parent) : Scene(parent) {
   mLayout->addWidget(new QFrame(this), 1, 2);
   connect(startbtn, &QPushButton::clicked, this, [] {
     Scene::sceneManageMessagePasser->target->test();
+    emit Scene::sceneManageMessagePasser->switcheScene(start);
   });
 }
