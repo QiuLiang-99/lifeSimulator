@@ -2,7 +2,7 @@
 #define SCENE_H
 
 #include "E_scene.h"
-#include "src/managermessagepasser.h"
+#include "src/msgpasser.h"
 #include <QGridLayout>
 #include <QLabel>
 #include <QWidget>
@@ -16,7 +16,7 @@ class Scene : public QWidget {
     // test
 
     // private:
-    static ManagerMessagePasser* sceneManageMessagePasser;
+    static MsgPasser* sceneMessenger;
 
   public:
     // virtual Scene* getInstance();

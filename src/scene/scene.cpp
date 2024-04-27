@@ -1,7 +1,7 @@
 #include "scene.h"
 
-ManagerMessagePasser* Scene::sceneManageMessagePasser =
-    new ManagerMessagePasser;
+MsgPasser* Scene::sceneMessenger = new MsgPasser;
+
 // todo
 Scene::Scene(QWidget* parent) : QWidget(parent) {
   QSize mphone(640, 960);
