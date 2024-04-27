@@ -12,7 +12,7 @@ gameStartScreen::gameStartScreen(QWidget* parent) : Scene(parent) {
   title->setAlignment(Qt::AlignCenter);
   QButtonGroup* startmenu     = new QButtonGroup(this);
   QFrame*       btnlist       = new QFrame(this);
-  QGridLayout*  btnlistLayout = new QGridLayout(this);
+  QGridLayout*  btnlistLayout = new QGridLayout;
   btnlist->setLayout(btnlistLayout);
   QPushButton* startbtn = new QPushButton("开始游戏", this);
   btnlistLayout->addWidget(startbtn, 0, 0);
