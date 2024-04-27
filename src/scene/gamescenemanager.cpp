@@ -17,8 +17,10 @@ void gameSceneManager::showScene(E_scene target) {
 }
 
 void gameSceneManager::switchScene(Scene* target) {
-  if (mainWindow->currentWidget() != target) {
-    mainWindow->addWidget(target);
-    mainWindow->setCurrentWidget(target);
+  if (mainWindow->currentWidget() == target) {
+    qDebug() << "same scene!";
+    return;
   }
+  mainWindow->addWidget(target);
+  mainWindow->setCurrentWidget(target);
 }

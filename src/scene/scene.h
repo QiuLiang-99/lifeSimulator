@@ -5,11 +5,14 @@
 #include <QLabel>
 #include <QWidget>
 #include <qlayout.h>
+
 class Scene : public QWidget {
     Q_OBJECT
 
   public:
     explicit Scene(QWidget* parent = nullptr);
+
+  private:
 
   public:
     // virtual Scene* getInstance();
