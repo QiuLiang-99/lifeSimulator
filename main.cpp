@@ -6,9 +6,9 @@
 int main(int argc, char* argv[]) {
   QApplication a(argc, argv);
 
-  gameSceneManager     e;
-  ManagerMessagePasser stmp;
-  stmp.target = &e;
+  gameSceneManager e;
+
+  Scene::stmp->target = &e;
   e.showScene(E_scene::start);
   QWidgetList list = QApplication::allWidgets();
   qDebug() << "窗口个数" << list.count();
