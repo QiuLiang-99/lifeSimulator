@@ -1,6 +1,6 @@
 #ifndef MANAGERMESSAGEPASSER_H
 #define MANAGERMESSAGEPASSER_H
-
+#include "gamemanager.h"
 #include <QObject>
 
 class ManagerMessagePasser : public QObject {
@@ -9,6 +9,8 @@ class ManagerMessagePasser : public QObject {
   public:
     explicit ManagerMessagePasser(QObject* parent = nullptr);
 
+    // test private:
+    GameManager* target;
   signals:
 };
 

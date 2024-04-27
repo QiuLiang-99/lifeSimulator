@@ -7,11 +7,6 @@
 
 #include "src/gamemanager.h"
 
-template <typename Tscene>
-Tscene* getInstance() {
-  static Tscene e;
-  return &e;
-};
 enum class E_scene {
   start
 };
