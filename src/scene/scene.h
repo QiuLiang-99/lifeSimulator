@@ -14,7 +14,7 @@ class Scene : public QWidget {
     // test
 
     // private:
-    static ManagerMessagePasser* stmp;
+    static ManagerMessagePasser* sceneManageMessagePasser;
 
   public:
     // virtual Scene* getInstance();

@@ -21,4 +21,7 @@ gameStartScreen::gameStartScreen(QWidget* parent) : Scene(parent) {
   mLayout->addWidget(new QFrame(this), 1, 0);
   mLayout->addWidget(new QFrame(this), 2, 1);
   mLayout->addWidget(new QFrame(this), 1, 2);
+  connect(startbtn, &QPushButton::clicked, this, [] {
+    Scene::sceneManageMessagePasser->target->test();
+  });
 }
