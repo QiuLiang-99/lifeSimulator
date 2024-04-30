@@ -24,7 +24,7 @@ class Singleton {
     Singleton()          = default;
     virtual ~Singleton() = default;
 };
-class Scene : public QWidget {
+class Scene : public QWidget, public Singleton<Scene> {
     Q_OBJECT
 
   public:
@@ -35,7 +35,6 @@ class Scene : public QWidget {
     static MsgPasser* sceneMessenger;
 
   public:
-    // virtual Scene* getInstance();
 };
 
 #endif // SCENE_H
