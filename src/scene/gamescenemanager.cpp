@@ -17,8 +17,9 @@ void gameSceneManager::showScene(E_scene target) {
     qDebug() << "scene type wrong";
     return;
   }
-  connect(e, &Scene::switcheScene, this,
-          &gameSceneManager::showScene); // 绑定信号，切换scene
+  connect(e, &Scene::switcheScene, this, &gameSceneManager::showScene,
+          Qt::UniqueConnection); // 绑定信号，切换scene
+                                 // Qt::UniqueConnection防止重复连接信号槽
   switchScene(e);
 }
 

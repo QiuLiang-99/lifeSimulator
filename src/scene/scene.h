@@ -31,7 +31,7 @@ class Scene : public QWidget {
     // test
 
     // private:
-    static MsgPasser* sceneMessenger;
+    // static MsgPasser* sceneMessenger;
 
   public:
   signals:

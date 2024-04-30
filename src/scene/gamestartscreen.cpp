@@ -2,6 +2,7 @@
 #include "src/scene/scene.h"
 #include <QButtonGroup>
 #include <QPushButton>
+#include <qapplication.h>
 #include <qframe.h>
 #include <qpushbutton.h>
 #include <qtmetamacros.h>
@@ -22,8 +23,10 @@ gameStartScreen::gameStartScreen(QWidget* parent) : Scene(parent) {
   mLayout->addWidget(new QFrame(this), 1, 0);
   mLayout->addWidget(new QFrame(this), 2, 1);
   mLayout->addWidget(new QFrame(this), 1, 2);
-  connect(startbtn, &QPushButton::clicked, this, [] {
+  connect(startbtn, &QPushButton::clicked, this, [&] {
     // Scene::sceneMessenger->target->test();
-    emit Scene::sceneMessenger->switcheScene(start);
+    emit        switcheScene(start);
+    QWidgetList list = QApplication::allWidgets();
+    qDebug() << "窗口个数" << list.count();
   });
 }
