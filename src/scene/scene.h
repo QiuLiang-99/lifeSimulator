@@ -15,7 +15,6 @@ class Singleton {
       static T instance;
       return instance;
     }
-
     Singleton(T&&)           = delete;
     Singleton(const T&)      = delete;
     void operator=(const T&) = delete;
@@ -24,7 +23,7 @@ class Singleton {
     Singleton()          = default;
     virtual ~Singleton() = default;
 };
-class Scene : public QWidget, public Singleton<Scene> {
+class Scene : public QWidget {
     Q_OBJECT
 
   public:
@@ -35,6 +34,8 @@ class Scene : public QWidget, public Singleton<Scene> {
     static MsgPasser* sceneMessenger;
 
   public:
+  signals:
+    void switcheScene(E_scene);
 };
 
 #endif // SCENE_H

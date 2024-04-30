@@ -3,7 +3,7 @@
 
 #include "scene.h"
 
-class GameMainScreen : public Scene {
+class GameMainScreen : public Scene, public Singleton<GameMainScreen> {
     Q_OBJECT
 
   public:

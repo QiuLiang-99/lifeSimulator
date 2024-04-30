@@ -1,7 +1,6 @@
 #ifndef GAMESCENEMANAGER_H
 #define GAMESCENEMANAGER_H
 
-#include "gamestartscreen.h"
 #include "mainwindow.h"
 #include "scene.h"
 
