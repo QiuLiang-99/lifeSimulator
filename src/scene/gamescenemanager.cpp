@@ -1,4 +1,5 @@
 #include "gamescenemanager.h"
+#include "src/scene/gamemainscreen.h"
 #include "src/scene/gamestartscreen.h"
 #include "src/scene/scene.h"
 
@@ -10,8 +11,11 @@ gameSceneManager::gameSceneManager(QObject* parent) : GameManager(parent) {
 void gameSceneManager::showScene(E_scene target) {
   Scene* e = nullptr;
   switch (target) {
-  case E_scene::start:
+  case start:
     e = &gameStartScreen::GetInstance();
+    break;
+  case gameMain:
+    e = &GameMainScreen::GetInstance();
     break;
   default:
     qDebug() << "scene type wrong";

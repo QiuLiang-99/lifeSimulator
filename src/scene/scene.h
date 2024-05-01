@@ -22,6 +22,9 @@ class Singleton {
   protected:
     Singleton()          = default;
     virtual ~Singleton() = default;
+
+  public:
+    static bool isFirstCreate;
 };
 class Scene : public QWidget {
     Q_OBJECT

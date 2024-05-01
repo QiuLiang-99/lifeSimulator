@@ -2,6 +2,7 @@
 #define GAMEMAINSCREEN_H
 
 #include "scene.h"
+#include <qgridlayout.h>
 
 class GameMainScreen : public Scene, public Singleton<GameMainScreen> {
     Q_OBJECT
@@ -9,6 +10,8 @@ class GameMainScreen : public Scene, public Singleton<GameMainScreen> {
   public:
     explicit GameMainScreen(QWidget* parent = nullptr);
 
+  private:
+    QGridLayout* layout;
   signals:
 };
 
