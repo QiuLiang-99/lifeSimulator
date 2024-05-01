@@ -25,6 +25,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
         ${srcs} ${headers}
+        src/character/protagonist/protagonist.h src/character/protagonist/protagonist.cpp
 
     )
 else()
