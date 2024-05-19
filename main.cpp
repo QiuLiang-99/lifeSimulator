@@ -1,5 +1,4 @@
 #include "src/scene/gamescenemanager.h"
-#include "src/scene/scene.h"
 #include <QApplication>
 #include <qobject.h>
 
