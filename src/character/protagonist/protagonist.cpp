@@ -4,6 +4,5 @@
 Protagonist::Protagonist(QObject* parent) : Character(parent) {
   HP = Lint(30);
   HP = 60;
-  HP++;
   HP > 50;
 }

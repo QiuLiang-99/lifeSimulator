@@ -1,12 +1,13 @@
 #ifndef GAMEMANAGER_H
 #define GAMEMANAGER_H
 
+#include "singleton.h"
 #include <QDebug>
 #include <QObject>
 #include <qtmetamacros.h>
 
 
-class GameManager : public QObject {
+class GameManager : public QObject, public Singleton<GameManager> {
     Q_OBJECT
 
   public:

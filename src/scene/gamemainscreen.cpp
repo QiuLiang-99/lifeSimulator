@@ -8,16 +8,32 @@ GameMainScreen::GameMainScreen(QWidget* parent) : Scene(parent) {
   layout = new QGridLayout;
   setLayout(layout);
 
-  QPushButton*  forwardBtn = new QPushButton("前进");
-  QLabel*       ATTlabel   = new QLabel("攻击力：？");
-  QProgressBar* hpBar      = new QProgressBar;
-  QFrame*       btnArea    = new QFrame;
-  QGridLayout*  btnLayout  = new QGridLayout;
+  QFrame*      labelArea   = new QFrame;
+  QGridLayout* labelLayout = new QGridLayout;
+
+  QLabel* ATTLabel         = new QLabel("攻击力：？");
+  QLabel* DEFLabel         = new QLabel("防御力：？");
+  QLabel* timeLabel        = new QLabel("时间：？");
+  QLabel* dateLabel        = new QLabel("天数：？");
+  layout->addWidget(labelArea);
+  labelArea->setLayout(labelLayout);
+
+  QFrame*      btnArea    = new QFrame;
+  QGridLayout* btnLayout  = new QGridLayout;
+  QPushButton* forwardBtn = new QPushButton("前进");
+  QPushButton* restBtn    = new QPushButton("前进");
+  QPushButton* homeBtn    = new QPushButton("前进");
+  QPushButton* talkBtn    = new QPushButton("前进");
 
   layout->addWidget(btnArea);
   btnArea->setLayout(btnLayout);
+
+  QProgressBar* hpBar     = new QProgressBar;
+  QProgressBar* energyBar = new QProgressBar;
+  QProgressBar* hungerBar = new QProgressBar;
+
   btnLayout->addWidget(forwardBtn, 2, 2);
-  btnLayout->addWidget(ATTlabel, 1, 1);
+  btnLayout->addWidget(ATTLabel, 1, 1);
   btnLayout->addWidget(hpBar, 0, 1);
 
   QString hpText = QString("生命值%1/%2(%p%)").arg(50).arg(100);
