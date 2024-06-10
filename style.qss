@@ -1,0 +1,18 @@
+QWidget {
+    border: 3px solid blue;
+    /* 标记窗口边缘*/
+}
+
+QPushButton {
+    background-color: #F0F0F0;
+    /* 按钮的默认背景色 */
+    color: black;
+    /* 按钮的默认文字颜色 */
+}
+
+QPushButton:pressed {
+    background-color: red;
+    /* 按钮被按下时的背景色 */
+    color: white;
+    /* 按钮被按下时的文字颜色 */
+}

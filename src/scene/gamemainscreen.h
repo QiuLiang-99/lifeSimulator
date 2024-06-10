@@ -2,7 +2,13 @@
 #define GAMEMAINSCREEN_H
 
 #include "scene.h"
-#include <qgridlayout.h>
+#include <QFrame>
+#include <QGridLayout>
+#include <QHBoxLayout>
+#include <QLabel>
+#include <QMainWindow>
+#include <QPushButton>
+#include <QVBoxLayout>
 
 class GameMainScreen : public Scene, public Singleton<GameMainScreen> {
     Q_OBJECT
@@ -11,7 +17,29 @@ class GameMainScreen : public Scene, public Singleton<GameMainScreen> {
     explicit GameMainScreen(QWidget* parent = nullptr);
 
   private:
-    QGridLayout* layout;
+    void setupUI();
+
+    // 控件声明
+    QWidget*     centralWidget;
+    QHBoxLayout* topLayout;
+    QLabel*      infoLabel;
+    QFrame*      statusFrame;
+    QVBoxLayout* statusLayout;
+    QLabel*      status1;
+    QLabel*      status2;
+    QLabel*      status3;
+    QLabel*      status4;
+    QLabel*      centerLabel;
+    QGridLayout* buttonLayout;
+    QPushButton* shopButton;
+    QPushButton* challengeButton;
+    QPushButton* bridgeButton;
+    QPushButton* exploreButton;
+    QPushButton* partnerButton;
+    QPushButton* manufactureButton;
+    QPushButton* characterButton;
+    QPushButton* eatButton;
+    QVBoxLayout* mainLayout;
   signals:
 };
 
