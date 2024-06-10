@@ -2,7 +2,6 @@
 #define SCENE_H
 
 #include "E_scene.h"
-#include "src/singleton.h"
 #include <QGridLayout>
 #include <QLabel>
 #include <QWidget>

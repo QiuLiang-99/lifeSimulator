@@ -2,7 +2,7 @@
 #define GAMESTARTSCREEN_H
 
 #include "scene.h"
-class gameStartScreen : public Scene, public Singleton<gameStartScreen> {
+class gameStartScreen : public Scene {
     Q_OBJECT
 
   public:

@@ -10,7 +10,7 @@
 #include <QPushButton>
 #include <QVBoxLayout>
 
-class GameMainScreen : public Scene, public Singleton<GameMainScreen> {
+class GameMainScreen : public Scene {
     Q_OBJECT
 
   public:

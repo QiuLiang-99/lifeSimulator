@@ -1,4 +1,5 @@
 #include "gamescenemanager.h"
+#include "src/factory/scenefactory.h"
 #include "src/scene/gamemainscreen.h"
 #include "src/scene/gamestartscreen.h"
 #include "src/scene/scene.h"
@@ -12,10 +13,12 @@ void gameSceneManager::showScene(E_scene target) {
   Scene* e = nullptr;
   switch (target) {
   case start:
-    e = &gameStartScreen::GetInstance();
+    // e = &gameStartScreen::GetInstance();
+    qDebug() << "fuck";
     break;
   case gameMain:
-    e = &GameMainScreen::GetInstance();
+    // e = &GameMainScreen::GetInstance();
+    qDebug() << "fuck";
     break;
   default:
     qDebug() << "scene type wrong";
