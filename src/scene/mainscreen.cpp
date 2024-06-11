@@ -1,10 +1,10 @@
-#include "gamemainscreen.h"
+#include "mainscreen.h"
 #include <QProgressBar>
 #include <qframe.h>
 #include <qlabel.h>
 #include <qpushbutton.h>
 
-GameMainScreen::GameMainScreen(QWidget* parent) : Scene(parent) {
+MainScreen::MainScreen(QWidget* parent) : Scene(parent) {
   setupUI();
   // 文字居中 text-align:center;
   // 设置圆角 border-radius
@@ -17,7 +17,7 @@ GameMainScreen::GameMainScreen(QWidget* parent) : Scene(parent) {
       "180);}QProgressBar:chunk{border-radius:5px;	"
       "background-color:#1ABC9C;}");*/
 }
-void GameMainScreen::setupUI() {
+void MainScreen::setupUI() {
   // 初始化控件
   topLayout    = new QHBoxLayout();
   infoLabel    = new QLabel("省城.160天 ⚡600/760 🥖20/240", this);

@@ -1,5 +1,6 @@
-#include "src/manager/SceneManager.h"
-#include "src/scene/gamescenemanager.h"
+#include "src/manager/scenemanager.h"
+
+#include <QAction>
 #include <QApplication>
 #include <QFile>
 #include <QTableWidgetItem>
@@ -17,11 +18,9 @@ int main(int argc, char* argv[]) {
   } else {
     qWarning("Could not open QSS file");
   }
-  gameSceneManager e;
-  e.showScene(E_scene::start);
+  // gameSceneManager e;
+  // e.showScene(E_scene::start);
   QWidgetList list = QApplication::allWidgets();
   qDebug() << "窗口个数" << list.count();
-  registerScenes();
-  SceneManager::getInstance().switchToScene(E_scene::start);
   return a.exec();
 }

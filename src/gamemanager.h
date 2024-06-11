@@ -6,8 +6,7 @@
 #include <QObject>
 #include <qtmetamacros.h>
 
-
-class GameManager : public QObject, public Singleton<GameManager> {
+class GameManager : public QObject {
     Q_OBJECT
 
   public:

@@ -1,4 +1,4 @@
-#include "gamestartscreen.h"
+#include "startscreen.h"
 #include "src/scene/scene.h"
 #include <QButtonGroup>
 #include <QPushButton>
@@ -7,7 +7,7 @@
 #include <qpushbutton.h>
 #include <qtmetamacros.h>
 
-gameStartScreen::gameStartScreen(QWidget* parent) : Scene(parent) {
+StartScreen::StartScreen(QWidget* parent) : Scene(parent) {
   mLayout       = new QGridLayout(this);
   QLabel* title = new QLabel("人生模拟器", this);
   mLayout->addWidget(title, 0, 1);

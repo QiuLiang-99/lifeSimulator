@@ -1,5 +1,5 @@
-#ifndef GAMEMAINSCREEN_H
-#define GAMEMAINSCREEN_H
+#ifndef MAINSCREEN_H
+#define MAINSCREEN_H
 
 #include "scene.h"
 #include <QFrame>
@@ -10,11 +10,11 @@
 #include <QPushButton>
 #include <QVBoxLayout>
 
-class GameMainScreen : public Scene {
+class MainScreen : public Scene {
     Q_OBJECT
 
   public:
-    explicit GameMainScreen(QWidget* parent = nullptr);
+    explicit MainScreen(QWidget* parent = nullptr);
 
   private:
     void setupUI();
@@ -43,4 +43,4 @@ class GameMainScreen : public Scene {
   signals:
 };
 
-#endif // GAMEMAINSCREEN_H
+#endif // MAINSCREEN_H

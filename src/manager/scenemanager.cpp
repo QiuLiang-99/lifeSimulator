@@ -1,15 +1,14 @@
-#include "gamescenemanager.h"
-#include "src/factory/scenefactory.h"
-#include "src/scene/gamemainscreen.h"
-#include "src/scene/gamestartscreen.h"
+#include "scenemanager.h"
+#include "src/scene/mainscreen.h"
 #include "src/scene/scene.h"
+#include "src/scene/startscreen.h"
 
-gameSceneManager::gameSceneManager(QObject* parent) : GameManager(parent) {
+SceneManager::SceneManager(QObject* parent) : GameManager(parent) {
   Window = new MainWindow;
   Window->show();
 }
 
-void gameSceneManager::showScene(E_scene target) {
+void SceneManager::showScene(E_scene target) {
   Scene* e = nullptr;
   switch (target) {
   case start:
@@ -24,13 +23,13 @@ void gameSceneManager::showScene(E_scene target) {
     qDebug() << "scene type wrong";
     return;
   }
-  connect(e, &Scene::switcheScene, this, &gameSceneManager::showScene,
-          Qt::UniqueConnection); // 绑定信号，切换scene
-                                 // Qt::UniqueConnection防止重复连接信号槽
+  // connect(e, &Scene::switcheScene, this,
+  // &gameSceneManager::showScene,Qt::UniqueConnection); // 绑定信号，切换scene
+  //  Qt::UniqueConnection防止重复连接信号槽
   switchScene(e);
 }
 
-void gameSceneManager::switchScene(Scene* target) {
+void SceneManager::switchScene(Scene* target) {
   if (Window->currentWidget() == target) {
     qDebug() << "same scene!";
     return;

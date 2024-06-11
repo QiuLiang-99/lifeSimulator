@@ -2,11 +2,11 @@
 #define GAMESTARTSCREEN_H
 
 #include "scene.h"
-class gameStartScreen : public Scene {
+class StartScreen : public Scene {
     Q_OBJECT
 
   public:
-    explicit gameStartScreen(QWidget* parent = nullptr);
+    explicit StartScreen(QWidget* parent = nullptr);
 
   private:
     QGridLayout* mLayout;

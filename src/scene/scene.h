@@ -2,6 +2,7 @@
 #define SCENE_H
 
 #include "E_scene.h"
+#include <QAction>
 #include <QGridLayout>
 #include <QLabel>
 #include <QWidget>
