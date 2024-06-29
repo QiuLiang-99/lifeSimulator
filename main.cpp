@@ -1,3 +1,4 @@
+#include "scene/E_scene.h"
 #include "src/manager/scenemanager.h"
 
 #include <QAction>
@@ -20,8 +21,7 @@ int main(int argc, char* argv[]) {
   }
   // gameSceneManager e;
   // e.showScene(E_scene::start);
-  SceneManager e;
-  e.showScene(E_scene::start);
+  SceneManager::getInstance().showScene(E_scene::start);
   QWidgetList list = QApplication::allWidgets();
   qDebug() << "窗口个数" << list.count();
   return a.exec();

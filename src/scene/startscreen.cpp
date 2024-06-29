@@ -1,4 +1,5 @@
 #include "startscreen.h"
+#include "manager/scenemanager.h"
 #include "src/scene/scene.h"
 #include <QButtonGroup>
 #include <QPushButton>
@@ -25,7 +26,7 @@ StartScreen::StartScreen(QWidget* parent) : Scene(parent) {
   mLayout->addWidget(new QFrame(this), 1, 2);
   connect(startbtn, &QPushButton::clicked, this, [&] {
     // Scene::sceneMessenger->target->test();
-    emit        switcheScene(gameMain);
+    SceneManager::getInstance().showScene(E_scene::gameMain);
     QWidgetList list = QApplication::allWidgets();
     qDebug() << "窗口个数" << list.count();
   });

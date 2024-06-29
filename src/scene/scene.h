@@ -20,8 +20,6 @@ class Scene : public QWidget {
     // static SceneManager* sceneManager;
 
   public:
-  signals:
-    void switcheScene(E_scene);
 };
 
 #endif // SCENE_H

@@ -6,10 +6,8 @@
 #include "scene/mainwindow.h"
 #include <QHash>
 
-#include <qtmetamacros.h>
-
 class Scene;
-class SceneManager : public GameManager {
+class SceneManager : public GameManager, public Singleton<SceneManager> {
     Q_OBJECT
 
   public:
