@@ -18,7 +18,9 @@ class MainScreen : public Scene {
 
   private:
     void setupUI();
+    void setupConnect();
 
+  private:
     // 控件声明
     QWidget*     centralWidget;
     QHBoxLayout* topLayout;

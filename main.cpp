@@ -1,7 +1,5 @@
-#include "scene/E_scene.h"
-#include "src/manager/scenemanager/scenemanager.h"
+#include "manager/scenemanager/scenemanager.h"
 
-#include <QAction>
 #include <QApplication>
 #include <QFile>
 #include <QTableWidgetItem>

@@ -1,4 +1,5 @@
 #include "mainscreen.h"
+#include "widget/scrollingtextdisplay.h"
 #include <QProgressBar>
 #include <qframe.h>
 #include <qlabel.h>
@@ -46,7 +47,9 @@ void MainScreen::setupUI() {
   statusLayout->addWidget(status1);
   statusLayout->addWidget(status2);
   statusLayout->addWidget(status3);
-  statusLayout->addWidget(status4);
+  auto e = new ScrollingTextDisplay(this);
+  e->addLabel(status4);
+  statusLayout->addWidget(e);
   statusFrame->setLayout(statusLayout);
 
   buttonLayout->addWidget(shopButton, 0, 0);
@@ -64,4 +67,47 @@ void MainScreen::setupUI() {
   mainLayout->addLayout(buttonLayout);
 
   setLayout(mainLayout);
+}
+
+void MainScreen::setupConnect() {
+
+  connect(shopButton, &QPushButton::clicked, this, [this]() {
+    // 商店按钮点击逻辑
+    qDebug() << "商店按钮被点击";
+  });
+
+  connect(challengeButton, &QPushButton::clicked, this, [this]() {
+    // 挑战按钮点击逻辑
+    qDebug() << "挑战按钮被点击";
+  });
+
+  connect(bridgeButton, &QPushButton::clicked, this, [this]() {
+    // 桥洞按钮点击逻辑
+    qDebug() << "桥洞按钮被点击";
+  });
+
+  connect(exploreButton, &QPushButton::clicked, this, [this]() {
+    // 探索按钮点击逻辑
+    qDebug() << "探索按钮被点击";
+  });
+
+  connect(partnerButton, &QPushButton::clicked, this, [this]() {
+    // 伙伴按钮点击逻辑
+    qDebug() << "伙伴按钮被点击";
+  });
+
+  connect(manufactureButton, &QPushButton::clicked, this, [this]() {
+    // 制造按钮点击逻辑
+    qDebug() << "制造按钮被点击";
+  });
+
+  connect(characterButton, &QPushButton::clicked, this, [this]() {
+    // 特性按钮点击逻辑
+    qDebug() << "特性按钮被点击";
+  });
+
+  connect(eatButton, &QPushButton::clicked, this, [this]() {
+    // 进食按钮点击逻辑
+    qDebug() << "进食按钮被点击";
+  });
 }
