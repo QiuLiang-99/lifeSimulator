@@ -20,6 +20,8 @@ int main(int argc, char* argv[]) {
   }
   // gameSceneManager e;
   // e.showScene(E_scene::start);
+  SceneManager e;
+  e.showScene(E_scene::start);
   QWidgetList list = QApplication::allWidgets();
   qDebug() << "窗口个数" << list.count();
   return a.exec();

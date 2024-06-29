@@ -12,11 +12,11 @@ class Character : public QObject {
     explicit Character(QObject* parent = nullptr);
 
   public:
-    Lint HP;
-    Lint ATT;
-    Lint DEF;
-    Lint speed;
-    Lint spirit;
+    LSint HP;
+    LSint ATT;
+    LSint DEF;
+    LSint speed;
+    LSint spirit;
 
   private:
     QString name_;
@@ -25,8 +25,8 @@ class Character : public QObject {
     inline void    setName(const QString& text) { name_ = text; };
     inline QString name() { return name_; };
   public slots:
-    virtual void getDamage(Lint); // todo
-    virtual void reduceHP(Lint);
+    virtual void getDamage(LSint); // todo
+    virtual void reduceHP(LSint);
     virtual int  causeDamage();
 
   protected:

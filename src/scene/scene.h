@@ -2,6 +2,7 @@
 #define SCENE_H
 
 #include "E_scene.h"
+#include "manager/gamemanager.h"
 #include <QAction>
 #include <QGridLayout>
 #include <QLabel>
@@ -15,8 +16,8 @@ class Scene : public QWidget {
     explicit Scene(QWidget* parent = nullptr);
     // test
 
-    // private:
-    // static MsgPasser* sceneMessenger;
+  private:
+    // static SceneManager* sceneManager;
 
   public:
   signals:

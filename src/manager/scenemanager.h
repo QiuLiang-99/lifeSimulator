@@ -1,9 +1,11 @@
 #ifndef __SCENEMANAGER_H__
 #define __SCENEMANAGER_H__
 
-#include "src/gamemanager.h"
-#include "src/scene/E_scene.h"
-#include "src/scene/mainwindow.h"
+#include "gamemanager.h"
+#include "scene/E_scene.h"
+#include "scene/mainwindow.h"
+#include <QHash>
+
 #include <qtmetamacros.h>
 
 class Scene;
@@ -14,11 +16,15 @@ class SceneManager : public GameManager {
     explicit SceneManager(QObject* parent = nullptr);
 
   public:
-    inline MainWindow* mainWindow() const { return Window; };
+    inline MainWindow* mainWindow() const { return mainWindow_; };
 
   public slots:
-    void showScene(E_scene);
-    void switchScene(Scene*);
+
+    void showScene(const E_scene&);
+
+  private:
+    Scene* getScene(const E_scene&);
+    void   switchScene(Scene*);
   signals:
 
   protected:
@@ -26,8 +32,10 @@ class SceneManager : public GameManager {
     //  bool eventFilter(QObject *obj, QEvent *event);
 
   private:
-    MainWindow* Window;
+    MainWindow* mainWindow_;
     // currentScene
+    using SceneFactory = std::function<Scene*()>;
+    QHash<E_scene, SceneFactory> SceneMap;
 };
 
 #endif // __SCENEMANAGER_H__
