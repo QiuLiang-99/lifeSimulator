@@ -3,7 +3,6 @@
 
 #include "E_scene.h"
 #include "manager/gamemanager.h"
-#include <QAction>
 #include <QGridLayout>
 #include <QLabel>
 #include <QWidget>
@@ -14,10 +13,6 @@ class Scene : public QWidget {
 
   public:
     explicit Scene(QWidget* parent = nullptr);
-    // test
-
-  private:
-    // static SceneManager* sceneManager;
 
   public:
 };

@@ -1,7 +1,7 @@
 #ifndef GAMESTARTSCREEN_H
 #define GAMESTARTSCREEN_H
 
-#include "scene.h"
+#include "../scene.h"
 class StartScreen : public Scene {
     Q_OBJECT
 

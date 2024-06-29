@@ -1,7 +1,7 @@
 #ifndef MAINSCREEN_H
 #define MAINSCREEN_H
 
-#include "scene.h"
+#include "../scene.h"
 #include <QFrame>
 #include <QGridLayout>
 #include <QHBoxLayout>

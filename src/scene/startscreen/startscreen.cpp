@@ -1,5 +1,5 @@
 #include "startscreen.h"
-#include "manager/scenemanager.h"
+#include "manager/scenemanager/scenemanager.h"
 #include "src/scene/scene.h"
 #include <QButtonGroup>
 #include <QPushButton>

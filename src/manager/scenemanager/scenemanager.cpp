@@ -1,8 +1,8 @@
 #include "scenemanager.h"
 #include "src/scene/E_scene.h"
-#include "src/scene/mainscreen.h"
+#include "src/scene/mainscreen/mainscreen.h"
 #include "src/scene/scene.h"
-#include "src/scene/startscreen.h"
+#include "src/scene/startscreen/startscreen.h"
 template <typename T>
 
 concept Subclass = std::is_base_of<Scene, T>::value;
