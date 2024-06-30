@@ -18,7 +18,7 @@ int main(int argc, char* argv[]) {
   QApplication a(argc, argv);
   loadQSS();
 
-  SceneManager::getInstance().showScene(E_scene::start);
+  SceneManager::getInstance()->showScene(E_scene::start);
 
   QWidgetList list = QApplication::allWidgets();
   qDebug() << "窗口个数" << list.count();
