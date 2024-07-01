@@ -1,7 +1,6 @@
 #ifndef GAMEMANAGER_H
 #define GAMEMANAGER_H
 
-#include "singleton.h"
 #include <QDebug>
 #include <QObject>
 #include <qtmetamacros.h>

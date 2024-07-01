@@ -7,7 +7,7 @@
 #include <QHash>
 
 class Scene;
-class SceneManager : public GameManager, public Singleton<SceneManager> {
+class SceneManager : public GameManager {
     Q_OBJECT
 
   public:
@@ -35,5 +35,8 @@ class SceneManager : public GameManager, public Singleton<SceneManager> {
     using SceneFactory = std::function<Scene*()>;
     QHash<E_scene, SceneFactory> SceneMap;
 };
+namespace gm {
+Q_GLOBAL_STATIC(SceneManager, sceneManager)
+}
 
 #endif // __SCENEMANAGER_H__
