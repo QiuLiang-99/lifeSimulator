@@ -3,6 +3,13 @@
 #include "src/scene/mainscreen/mainscreen.h"
 #include "src/scene/scene.h"
 #include "src/scene/startscreen/startscreen.h"
+namespace gm {
+Q_GLOBAL_STATIC(SceneManager, sceneManager)
+
+SceneManager* getSceneManager() {
+  return sceneManager;
+}
+} // namespace gm
 template <typename T>
 
 concept Subclass = std::is_base_of<Scene, T>::value;

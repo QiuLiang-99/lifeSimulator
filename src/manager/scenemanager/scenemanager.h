@@ -13,9 +13,6 @@ class SceneManager : public GameManager {
   public:
     explicit SceneManager(QObject* parent = nullptr);
 
-  public:
-    inline MainWindow* mainWindow() const { return mainWindow_; };
-
   public slots:
 
     void showScene(const E_scene&);
@@ -36,7 +33,7 @@ class SceneManager : public GameManager {
     QHash<E_scene, SceneFactory> SceneMap;
 };
 namespace gm {
-Q_GLOBAL_STATIC(SceneManager, sceneManager)
-}
-
+// 声明一个函数来获取 Q_GLOBAL_STATIC 实例
+SceneManager* getSceneManager();
+} // namespace gm
 #endif // __SCENEMANAGER_H__

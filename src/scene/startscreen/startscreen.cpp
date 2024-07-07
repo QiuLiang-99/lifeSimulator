@@ -26,7 +26,7 @@ StartScreen::StartScreen(QWidget* parent) : Scene(parent) {
   mLayout->addWidget(new QFrame(this), 1, 2);
   connect(startbtn, &QPushButton::clicked, this, [&] {
     // Scene::sceneMessenger->target->test();
-    gm::sceneManager->showScene(E_scene::gameMain);
+    gm::getSceneManager()->showScene(E_scene::gameMain);
     QWidgetList list = QApplication::allWidgets();
     qDebug() << "窗口个数" << list.count();
   });
