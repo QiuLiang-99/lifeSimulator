@@ -28,7 +28,7 @@ StartScreen::StartScreen(QWidget* parent) : Scene(parent) {
   connect(startbtn, &QPushButton::clicked, this, [&] {
     // Scene::sceneMessenger->target->test();
     StraydiaryGame e;
-    e.sceneManager.showScene(E_scene::gameMain);
+    e.sceneManager().showScene(E_scene::gameMain);
     QWidgetList list = QApplication::allWidgets();
     qDebug() << "窗口个数" << list.count();
   });

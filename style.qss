@@ -8,11 +8,10 @@ QPushButton {
     /* 按钮的默认背景色 */
     color: black;
     /* 按钮的默认文字颜色 */
+    min-height: 50px; /* 设置QPushButton的最小高度为50像素 */
 }
 
 QPushButton:pressed {
-    background-color: red;
-    /* 按钮被按下时的背景色 */
-    color: white;
-    /* 按钮被按下时的文字颜色 */
+    background-color: #D3D3D3; /* 按钮被按下时的背景色改为淡灰色 */
+    /* 文字颜色保持不变 */
 }

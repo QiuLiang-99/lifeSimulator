@@ -1,7 +1,7 @@
 #ifndef CHARACTER_H
 #define CHARACTER_H
 
-#include "Lint.h"
+#include "utils/Lint.h"
 #include <QObject>
 #include <qtmetamacros.h>
 
