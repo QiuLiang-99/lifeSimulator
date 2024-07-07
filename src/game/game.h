@@ -19,22 +19,22 @@ class Game : public QObject {
     inline SceneManager& sceneManager() { return sceneManager_; };
 
   private:
-    QDate        date;
-    QTime        time;
-    QString      location;
-    Protagonist* protagonist;
+    QDate        date_;
+    QTime        time_;
+    QString      location_;
+    Protagonist* protagonist_;
 
   public:
-    inline void  setDate(const QDate& _date) { date = _date; };
-    inline QDate getDate() { return date; };
-    inline void  setTime(const QTime& _time) { time = _time; };
-    inline QTime getTime() { return time; };
-    inline void setLocation(const QString& _location) { location = _location; };
-    inline QString getLocation() { return location; };
-    inline void    setProtagonist(Protagonist* _protagonist) {
-      protagonist = _protagonist;
+    inline void  date(const QDate& _date) { date_ = _date; };
+    inline QDate getDate() { return date_; };
+    inline void  time(const QTime& _time) { time_ = _time; };
+    inline QTime getTime() { return time_; };
+    inline void  location(const QString& _location) { location_ = _location; };
+    inline QString getLocation() { return location_; };
+    inline void    protagonist(Protagonist* _protagonist) {
+      protagonist_ = _protagonist;
     };
-    inline Protagonist* getProtagonist() { return protagonist; };
+    inline Protagonist* getProtagonist() { return protagonist_; };
     /*public slots:
       virtual void startGame();
       virtual void endGame();

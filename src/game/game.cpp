@@ -2,7 +2,7 @@
 #include "manager/scenemanager/scenemanager.h"
 Game::Game(QObject* parent) :
     QObject(parent), sceneManager_(*new SceneManager) {
-  date     = QDate::currentDate();
-  time     = QTime::currentTime();
-  location = "Home";
+  date_     = QDate::currentDate();
+  time_     = QTime::currentTime();
+  location_ = "Home";
 }
