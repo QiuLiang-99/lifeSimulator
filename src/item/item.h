@@ -10,7 +10,7 @@ class Item : public QObject {
   public:
     explicit Item(QObject* parent = nullptr);
 
-  private:
+  protected:
     QString name;
     QString description;
 

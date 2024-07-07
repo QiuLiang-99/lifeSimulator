@@ -1,4 +1,5 @@
 #include "startscreen.h"
+#include "game/straydiarygame/straydiarygame.h"
 #include "manager/scenemanager/scenemanager.h"
 #include "src/scene/scene.h"
 #include <QButtonGroup>
@@ -26,7 +27,8 @@ StartScreen::StartScreen(QWidget* parent) : Scene(parent) {
   mLayout->addWidget(new QFrame(this), 1, 2);
   connect(startbtn, &QPushButton::clicked, this, [&] {
     // Scene::sceneMessenger->target->test();
-    gm::getSceneManager()->showScene(E_scene::gameMain);
+    StraydiaryGame e;
+    e.sceneManager.showScene(E_scene::gameMain);
     QWidgetList list = QApplication::allWidgets();
     qDebug() << "窗口个数" << list.count();
   });

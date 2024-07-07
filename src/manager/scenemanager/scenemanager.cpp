@@ -1,15 +1,10 @@
 #include "scenemanager.h"
+#include "scene/mainwindow.h"
 #include "src/scene/E_scene.h"
 #include "src/scene/mainscreen/mainscreen.h"
 #include "src/scene/scene.h"
 #include "src/scene/startscreen/startscreen.h"
-namespace gm {
-Q_GLOBAL_STATIC(SceneManager, sceneManager)
 
-SceneManager* getSceneManager() {
-  return sceneManager;
-}
-} // namespace gm
 template <typename T>
 
 concept Subclass = std::is_base_of<Scene, T>::value;
@@ -19,9 +14,8 @@ Scene* createSubScene() {
   static T e;
   return &e;
 }
-SceneManager::SceneManager(QObject* parent) : GameManager(parent) {
-  mainWindow_ = new MainWindow;
-  mainWindow_->show();
+SceneManager::SceneManager(QObject* parent) :
+    GameManager(parent), mainWindow_(getMainWindow()) {
   SceneMap = {
       {start, createSubScene<StartScreen>},
       {gameMain, createSubScene<MainScreen>},
@@ -44,10 +38,10 @@ void SceneManager::showScene(const E_scene& target) {
 }
 
 void SceneManager::switchScene(Scene* target) {
-  if (mainWindow_->currentWidget() == target) {
+  if (mainWindow_.currentWidget() == target) {
     qDebug() << "same scene!";
     return;
   }
-  mainWindow_->addWidget(target);
-  mainWindow_->setCurrentWidget(target);
+  mainWindow_.addWidget(target);
+  mainWindow_.setCurrentWidget(target);
 }

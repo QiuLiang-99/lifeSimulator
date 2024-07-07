@@ -10,6 +10,7 @@ class StraydiaryGame : public Game {
     explicit StraydiaryGame(QObject* parent = nullptr);
 
   private:
+    int distance;
 };
 
 #endif // STRAYDIARYGAME_H

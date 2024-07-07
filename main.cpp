@@ -1,9 +1,8 @@
-#include "manager/scenemanager/scenemanager.h"
-
+#include "game/straydiarygame/straydiarygame.h"
+#include "scene/mainwindow.h"
+#include "scene/startscreen/startscreen.h"
 #include <QApplication>
 #include <QFile>
-#include <QTableWidgetItem>
-#include <qobject.h>
 void loadQSS() {
   QFile file(":/style.qss");
   if (file.open(QFile::ReadOnly)) {
@@ -17,9 +16,9 @@ void loadQSS() {
 int main(int argc, char* argv[]) {
   QApplication a(argc, argv);
   loadQSS();
-
-  gm::getSceneManager()->showScene(E_scene::start);
-
+  MainWindow  w;
+  StartScreen e;
+  w.show();
   QWidgetList list = QApplication::allWidgets();
   qDebug() << "窗口个数" << list.count();
   return a.exec();

@@ -2,6 +2,10 @@
 #include <qboxlayout.h>
 #include <qlayout.h>
 #include <qsize.h>
+Q_GLOBAL_STATIC(MainWindow, mainWindow)
+MainWindow& getMainWindow() {
+  return *mainWindow;
+}
 
 MainWindow::MainWindow(QWidget* parent) : QStackedWidget(parent) {
   setStyleSheet(QString::fromUtf8("border:3px solid blue")); // 标记窗口边缘

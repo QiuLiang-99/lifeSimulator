@@ -27,13 +27,9 @@ class SceneManager : public GameManager {
     //  bool eventFilter(QObject *obj, QEvent *event);
 
   private:
-    MainWindow* mainWindow_;
+    MainWindow& mainWindow_;
     // currentScene
     using SceneFactory = std::function<Scene*()>;
     QHash<E_scene, SceneFactory> SceneMap;
 };
-namespace gm {
-// 声明一个函数来获取 Q_GLOBAL_STATIC 实例
-SceneManager* getSceneManager();
-} // namespace gm
 #endif // __SCENEMANAGER_H__
