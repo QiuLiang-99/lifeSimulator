@@ -42,6 +42,5 @@ void SceneManager::switchScene(Scene* target) {
     qDebug() << "same scene!";
     return;
   }
-  mainWindow_.addWidget(target);
-  mainWindow_.setCurrentWidget(target);
+  mainWindow_.showWidget(target);
 }

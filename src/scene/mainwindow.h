@@ -4,6 +4,7 @@
 #include <QStackedWidget>
 #include <QWidget>
 #include <qglobalstatic.h>
+#include <qwidget.h>
 
 class MainWindow : public QStackedWidget {
     Q_OBJECT
@@ -14,7 +15,7 @@ class MainWindow : public QStackedWidget {
   public:
   signals:
   public slots:
-    // void addSence(Scene*);
+    void showWidget(QWidget*);
 };
 MainWindow& getMainWindow();
 #endif // MAINWINDOW_H

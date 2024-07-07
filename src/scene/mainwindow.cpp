@@ -16,6 +16,7 @@ MainWindow::MainWindow(QWidget* parent) : QStackedWidget(parent) {
   setWindowFlags(windowFlags() & ~Qt::WindowMaximizeButtonHint);
   setFixedSize(this->width(), this->height());
 }
-/*void MainWindow::addSence(Scene* target) {
-  addWidget(target);
-}*/
+void MainWindow::showWidget(QWidget* widget) {
+  addWidget(widget);
+  setCurrentWidget(widget);
+}

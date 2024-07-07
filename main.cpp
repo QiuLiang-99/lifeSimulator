@@ -1,4 +1,3 @@
-#include "game/straydiarygame/straydiarygame.h"
 #include "scene/mainwindow.h"
 #include "scene/startscreen/startscreen.h"
 #include <QApplication>
@@ -16,9 +15,9 @@ void loadQSS() {
 int main(int argc, char* argv[]) {
   QApplication a(argc, argv);
   loadQSS();
-  MainWindow  w;
   StartScreen e;
-  w.show();
+  getMainWindow().showWidget(&e);
+  getMainWindow().show();
   QWidgetList list = QApplication::allWidgets();
   qDebug() << "窗口个数" << list.count();
   return a.exec();
