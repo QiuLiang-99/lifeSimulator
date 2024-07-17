@@ -1,7 +1,10 @@
 #ifndef GAMEMANAGER_H
 #define GAMEMANAGER_H
 
-#include "game/game.h"
+#include "game/E_game.h"
+
+#include "../manager.h"
+
 class Game;
 class GameManager : public Manager {
     Q_OBJECT
@@ -9,9 +12,15 @@ class GameManager : public Manager {
   public:
     explicit GameManager(QObject* parent = nullptr);
 
+  public:
+    static GameManager& getSingleton();
+
   public slots:
 
-    // void showScene(const E_scene&);
+    void openGame(const E_game& game);
+
+  public:
+    inline Game& currentGame() { return *currentGame_; }
 
   private:
     // Scene* getScene(const E_scene&);
@@ -24,9 +33,9 @@ class GameManager : public Manager {
 
   private:
     // MainWindow& mainWindow_;
-    //  currentScene
-    // using SceneFactory = std::function<Scene*()>;
-    // QHash<E_scene, SceneFactory> SceneMap;
+    Game* currentGame_;
+    using GameFactory = std::function<Game*()>;
+    QHash<E_game, GameFactory> GameMap;
 };
 
 #endif // GAMEMANAGER_H

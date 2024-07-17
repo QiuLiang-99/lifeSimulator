@@ -7,9 +7,9 @@
 #include "src/scene/startscreen/startscreen.h"
 
 template <typename T>
-concept isScene = std::is_base_of<Scene, T>::value;
+concept isGame = std::is_base_of<Scene, T>::value;
 
-template <isScene T>
+template <isGame T>
 Scene* createScene() {
   static T e;
   return &e;

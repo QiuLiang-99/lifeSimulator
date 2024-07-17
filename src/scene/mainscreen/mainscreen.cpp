@@ -1,5 +1,8 @@
 #include "mainscreen.h"
+#include "game/game.h"
+#include "manager/gamemanager/gamemanager.h"
 #include "manager/scenemanager/scenemanager.h"
+#include "scene/E_scene.h"
 #include "widget/scrollingtextdisplay.h"
 #include <QProgressBar>
 #include <qframe.h>
@@ -99,6 +102,7 @@ void MainScreen::setupConnect() {
 
   connect(manufactureButton, &QPushButton::clicked, this, [this]() {
     // todo 制造按钮点击逻辑
+    GameManager::getSingleton().currentGame().sceneManager().showScene(craft);
     qDebug() << "制造按钮被点击";
   });
 

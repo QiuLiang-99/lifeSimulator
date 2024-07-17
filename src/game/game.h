@@ -12,11 +12,11 @@ class Game : public QObject {
   public:
     explicit Game(QObject* parent = nullptr);
 
-  private:
-    SceneManager& sceneManager_ = *new SceneManager(this);
-
   public:
     inline SceneManager& sceneManager() { return sceneManager_; };
+
+  private:
+    SceneManager& sceneManager_ = *new SceneManager(this);
 
   private:
     QDate        date_;
