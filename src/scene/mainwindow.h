@@ -13,6 +13,7 @@ class MainWindow : public QStackedWidget {
     explicit MainWindow(QWidget* parent = nullptr);
 
   public:
+    static MainWindow& getSingleton();
   signals:
   public slots:
     void showWidget(QWidget*);

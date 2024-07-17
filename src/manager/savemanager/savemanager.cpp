@@ -1,6 +1,6 @@
 #include "savemanager.h"
 
-SaveManager::SaveManager(QObject* parent) : GameManager(parent) {}
+SaveManager::SaveManager(QObject* parent) : Manager(parent) {}
 
 void SaveManager::save() {
   qDebug() << "保存";

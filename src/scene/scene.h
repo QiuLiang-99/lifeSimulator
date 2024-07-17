@@ -2,7 +2,7 @@
 #define SCENE_H
 
 #include "E_scene.h"
-#include "manager/gamemanager.h"
+#include "manager/manager.h"
 #include <QGridLayout>
 #include <QLabel>
 #include <QWidget>

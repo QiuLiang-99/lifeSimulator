@@ -3,7 +3,7 @@
 #include <qlayout.h>
 #include <qsize.h>
 Q_GLOBAL_STATIC(MainWindow, mainWindow)
-MainWindow& getMainWindow() {
+MainWindow& MainWindow::getSingleton() {
   return *mainWindow;
 }
 

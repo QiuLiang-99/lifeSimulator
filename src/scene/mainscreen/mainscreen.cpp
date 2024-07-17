@@ -1,4 +1,5 @@
 #include "mainscreen.h"
+#include "manager/scenemanager/scenemanager.h"
 #include "widget/scrollingtextdisplay.h"
 #include <QProgressBar>
 #include <qframe.h>
@@ -97,7 +98,7 @@ void MainScreen::setupConnect() {
   });
 
   connect(manufactureButton, &QPushButton::clicked, this, [this]() {
-    // 制造按钮点击逻辑
+    // todo 制造按钮点击逻辑
     qDebug() << "制造按钮被点击";
   });
 

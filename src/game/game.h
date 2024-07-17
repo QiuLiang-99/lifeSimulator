@@ -13,7 +13,7 @@ class Game : public QObject {
     explicit Game(QObject* parent = nullptr);
 
   private:
-    SceneManager& sceneManager_;
+    SceneManager& sceneManager_ = *new SceneManager(this);
 
   public:
     inline SceneManager& sceneManager() { return sceneManager_; };
@@ -25,16 +25,18 @@ class Game : public QObject {
     Protagonist* protagonist_;
 
   public:
-    inline void  date(const QDate& _date) { date_ = _date; };
-    inline QDate getDate() { return date_; };
-    inline void  time(const QTime& _time) { time_ = _time; };
-    inline QTime getTime() { return time_; };
-    inline void  location(const QString& _location) { location_ = _location; };
-    inline QString getLocation() { return location_; };
-    inline void    protagonist(Protagonist* _protagonist) {
+    inline void  setDate(const QDate& _date) { date_ = _date; };
+    inline QDate date() { return date_; };
+    inline void  setTime(const QTime& _time) { time_ = _time; };
+    inline QTime time() { return time_; };
+    inline void  setLocation(const QString& _location) {
+      location_ = _location;
+    };
+    inline QString location() { return location_; };
+    inline void    setProtagonist(Protagonist* _protagonist) {
       protagonist_ = _protagonist;
     };
-    inline Protagonist* getProtagonist() { return protagonist_; };
+    inline Protagonist* protagonist() { return protagonist_; };
     /*public slots:
       virtual void startGame();
       virtual void endGame();

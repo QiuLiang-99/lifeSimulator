@@ -17,10 +17,12 @@ void loadQSS() {
 int main(int argc, char* argv[]) {
   QApplication a(argc, argv);
   loadQSS();
+  MainWindow& w = MainWindow::getSingleton();
   StartScreen e;
-  getMainWindow().showWidget(&e);
-  getMainWindow().show();
+  w.showWidget(&e);
+  w.show();
   QWidgetList list = QApplication::allWidgets();
   qDebug() << "窗口个数" << list.count();
+
   return a.exec();
 }

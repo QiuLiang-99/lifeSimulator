@@ -3,5 +3,6 @@
 enum E_scene {
   start,
   gameMain,
+  craft,
 };
 #endif // E_SCENE_H

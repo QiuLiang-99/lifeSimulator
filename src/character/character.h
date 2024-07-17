@@ -25,7 +25,7 @@ class Character : public QObject {
     inline void    setName(const QString& text) { name_ = text; };
     inline QString name() { return name_; };
   public slots:
-    virtual void getDamage(LSint); // todo
+    virtual void takeDamage(LSint); // todo
     virtual void reduceHP(LSint);
     virtual int  causeDamage();
 

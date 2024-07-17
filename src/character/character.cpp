@@ -1,7 +1,7 @@
 #include "character.h"
 
 Character::Character(QObject* parent) : QObject(parent) {}
-void Character::getDamage(LSint e) {
+void Character::takeDamage(LSint e) {
   reduceHP(e);
 }
 

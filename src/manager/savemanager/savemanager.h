@@ -1,8 +1,8 @@
 #ifndef SAVEMANAGER_H
 #define SAVEMANAGER_H
 
-#include "manager/gamemanager.h"
-class SaveManager : public GameManager {
+#include "manager/manager.h"
+class SaveManager : public Manager {
     Q_OBJECT
 
   public:

@@ -1,13 +1,13 @@
 #ifndef __SCENEMANAGER_H__
 #define __SCENEMANAGER_H__
 
-#include "../gamemanager.h"
+#include "../manager.h"
 #include "scene/E_scene.h"
 #include "scene/mainwindow.h"
 #include <QHash>
 
 class Scene;
-class SceneManager : public GameManager {
+class SceneManager : public Manager {
     Q_OBJECT
 
   public:

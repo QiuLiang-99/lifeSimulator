@@ -1,4 +1,5 @@
 #include "scenemanager.h"
+#include "scene/craftscreen/craftscreen.h"
 #include "scene/mainwindow.h"
 #include "src/scene/E_scene.h"
 #include "src/scene/mainscreen/mainscreen.h"
@@ -6,19 +7,20 @@
 #include "src/scene/startscreen/startscreen.h"
 
 template <typename T>
+concept isScene = std::is_base_of<Scene, T>::value;
 
-concept Subclass = std::is_base_of<Scene, T>::value;
-
-template <Subclass T>
-Scene* createSubScene() {
+template <isScene T>
+Scene* createScene() {
   static T e;
   return &e;
 }
+
 SceneManager::SceneManager(QObject* parent) :
-    GameManager(parent), mainWindow_(getMainWindow()) {
+    Manager(parent), mainWindow_(MainWindow::getSingleton()) {
   SceneMap = {
-      {start, createSubScene<StartScreen>},
-      {gameMain, createSubScene<MainScreen>},
+      {start, createScene<StartScreen>},
+      {gameMain, createScene<MainScreen>},
+      {craft, createScene<CraftScreen>},
   };
 }
 
