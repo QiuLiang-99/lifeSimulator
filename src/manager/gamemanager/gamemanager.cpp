@@ -21,6 +21,8 @@ GameManager::GameManager(QObject* parent) : Manager(parent) {
   };
 }
 
-void GameManager::openGame(const E_game& target) {
+Game& GameManager::openGame(const E_game& target) {
   currentGame_ = GameMap.value(target)();
+  return *currentGame_;
+  // todo 考虑只能存在一个game，切换game时要不要销毁
 }

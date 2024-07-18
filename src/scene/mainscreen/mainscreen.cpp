@@ -11,6 +11,7 @@
 
 MainScreen::MainScreen(QWidget* parent) : Scene(parent) {
   setupUI();
+  setupConnect();
   // 文字居中 text-align:center;
   // 设置圆角 border-radius
   // 这里要注意如果设置的圆角大于或等进度条高度的一半，圆角设置无效，
@@ -102,7 +103,7 @@ void MainScreen::setupConnect() {
 
   connect(manufactureButton, &QPushButton::clicked, this, [this]() {
     // todo 制造按钮点击逻辑
-    GameManager::getSingleton().currentGame().sceneManager().showScene(craft);
+    gm().game().sM().showScene(craft);
     qDebug() << "制造按钮被点击";
   });
 

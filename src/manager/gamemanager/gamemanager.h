@@ -1,9 +1,8 @@
 #ifndef GAMEMANAGER_H
 #define GAMEMANAGER_H
 
-#include "game/E_game.h"
-
 #include "../manager.h"
+#include "game/E_game.h"
 
 class Game;
 class GameManager : public Manager {
@@ -17,10 +16,11 @@ class GameManager : public Manager {
 
   public slots:
 
-    void openGame(const E_game& game);
+    Game& openGame(const E_game& game);
 
   public:
     inline Game& currentGame() { return *currentGame_; }
+    inline Game& game() { return *currentGame_; }
 
   private:
     // Scene* getScene(const E_scene&);
@@ -37,5 +37,6 @@ class GameManager : public Manager {
     using GameFactory = std::function<Game*()>;
     QHash<E_game, GameFactory> GameMap;
 };
-
+inline auto gm = GameManager::getSingleton;
+// #define gm() GameManager::getSingleton()
 #endif // GAMEMANAGER_H

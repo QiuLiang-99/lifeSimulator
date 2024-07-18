@@ -13,16 +13,18 @@ class Game : public QObject {
     explicit Game(QObject* parent = nullptr);
 
   public:
-    inline SceneManager& sceneManager() { return sceneManager_; };
+    inline SceneManager& sceneManager() { return *sceneManager_; };
+    inline SceneManager& sM() { return *sceneManager_; };
 
   private:
-    SceneManager& sceneManager_ = *new SceneManager(this);
+    SceneManager* sceneManager_ = new SceneManager(this);
 
   private:
     QDate        date_;
     QTime        time_;
     QString      location_;
     Protagonist* protagonist_;
+    // todo 要不再来一个timeManager？
 
   public:
     inline void  setDate(const QDate& _date) { date_ = _date; };
