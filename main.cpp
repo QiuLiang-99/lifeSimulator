@@ -3,9 +3,9 @@
 #include <QApplication>
 #include <QFile>
 void loadQSS() {
-  QFile file(
-      "style.qss"); // 在Qt中，以冒号(:)开头的路径指的是资源文件（Qt Resource
-                    // System），这意味着style.qss应该被添加到Qt资源文件中。检查.qrc文件确保资源被正确引用。
+  QFile file("style.qss");
+  // 在Qt中，以冒号(:)开头的路径指的是资源文件（Qt Resource
+  // System），这意味着style.qss应该被添加到Qt资源文件中。检查.qrc文件确保资源被正确引用。
   if (file.open(QFile::ReadOnly)) {
     QString style = file.readAll();
     qApp->setStyleSheet(style);
