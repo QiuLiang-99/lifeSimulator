@@ -11,7 +11,6 @@
 #include <qpushbutton.h>
 #include <qtmetamacros.h>
 
-
 StartScreen::StartScreen(QWidget* parent) : SceneWidget(parent) {
   mLayout       = new QGridLayout(this);
   QLabel* title = new QLabel("人生模拟器", this);
@@ -30,7 +29,7 @@ StartScreen::StartScreen(QWidget* parent) : SceneWidget(parent) {
   mLayout->addWidget(new QFrame(this), 1, 2);
   connect(startbtn, &QPushButton::clicked, this, [&] {
     // Scene::sceneMessenger->target->test();
-    gm().openGame(straydiary).sM().showScene(gameMain);
+    gm.openGame(straydiary).sM().showScene(gameMain);
     QWidgetList list = QApplication::allWidgets();
     qDebug() << "窗口个数" << list.count();
   });

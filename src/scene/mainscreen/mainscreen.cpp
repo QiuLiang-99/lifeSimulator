@@ -103,7 +103,7 @@ void MainScreen::setupConnect() {
 
   connect(manufactureButton, &QPushButton::clicked, this, [this]() {
     // todo 制造按钮点击逻辑
-    gm().game().sM().showScene(craft);
+    gm.game().sM().showScene(craft);
     qDebug() << "制造按钮被点击";
   });
 

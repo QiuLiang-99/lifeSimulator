@@ -37,6 +37,5 @@ class GameManager : public Manager {
     using GameFactory = std::function<Game*()>;
     QHash<E_game, GameFactory> GameMap;
 };
-inline auto gm = GameManager::getSingleton;
-// #define gm() GameManager::getSingleton()
+#define gm GameManager::getSingleton()
 #endif // GAMEMANAGER_H
