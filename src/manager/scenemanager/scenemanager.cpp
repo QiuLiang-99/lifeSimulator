@@ -7,10 +7,10 @@
 #include "src/scene/startscreen/startscreen.h"
 
 template <typename T>
-concept isGame = std::is_base_of<Scene, T>::value;
+concept isGame = std::is_base_of<SceneWidget, T>::value;
 
 template <isGame T>
-Scene* createScene() {
+SceneWidget* createScene() {
   static T e;
   return &e;
 }
@@ -18,13 +18,13 @@ Scene* createScene() {
 SceneManager::SceneManager(QObject* parent) :
     Manager(parent), mainWindow_(MainWindow::getSingleton()) {
   SceneMap = {
-      {start, createScene<StartScreen>},
-      {gameMain, createScene<MainScreen>},
-      {craft, createScene<CraftScreen>},
+      {   start, createScene<StartScreen>},
+      {gameMain,  createScene<MainScreen>},
+      {   craft, createScene<CraftScreen>},
   };
 }
 
-Scene* SceneManager::getScene(const E_scene& target) {
+SceneWidget* SceneManager::getScene(const E_scene& target) {
   if (SceneMap.contains(target)) {
     return SceneMap.value(target)();
   }
@@ -32,14 +32,14 @@ Scene* SceneManager::getScene(const E_scene& target) {
 }
 
 void SceneManager::showScene(const E_scene& target) {
-  Scene* e = getScene(target);
+  SceneWidget* e = getScene(target);
   // connect(e, &Scene::switcheScene, this,
   // &gameSceneManager::showScene,Qt::UniqueConnection); // 绑定信号，切换scene
   //  Qt::UniqueConnection防止重复连接信号槽
   switchScene(e);
 }
 
-void SceneManager::switchScene(Scene* target) {
+void SceneManager::switchScene(SceneWidget* target) {
   if (mainWindow_.currentWidget() == target) {
     qDebug() << "same scene!";
     return;

@@ -7,6 +7,7 @@
 #include <QVBoxLayout>
 #include <QWidget>
 #include <qboxlayout.h>
+#include <qwidget.h>
 
 class CraftItemWidget : public QWidget {
     Q_OBJECT
@@ -21,7 +22,7 @@ class CraftItemWidget : public QWidget {
     Item*        data;
     QVBoxLayout* layout;
 };
-class CraftScreen : public Scene {
+class CraftScreen : public SceneWidget {
     Q_OBJECT
 
   public:

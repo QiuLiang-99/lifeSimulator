@@ -2,7 +2,7 @@
 #define GAMESTARTSCREEN_H
 
 #include "../scene.h"
-class StartScreen : public Scene {
+class StartScreen : public SceneWidget {
     Q_OBJECT
 
   public:

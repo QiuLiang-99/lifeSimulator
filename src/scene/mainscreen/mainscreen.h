@@ -10,7 +10,7 @@
 #include <QPushButton>
 #include <QVBoxLayout>
 
-class MainScreen : public Scene {
+class MainScreen : public SceneWidget {
     Q_OBJECT
 
   public:

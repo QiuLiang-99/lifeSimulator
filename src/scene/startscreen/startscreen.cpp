@@ -1,5 +1,5 @@
 #include "startscreen.h"
-#include "game/straydiarygame/straydiarygame.h"
+#include "game/game.h"
 #include "manager/gamemanager/gamemanager.h"
 #include "manager/scenemanager/scenemanager.h"
 #include "scene/E_scene.h"
@@ -11,7 +11,8 @@
 #include <qpushbutton.h>
 #include <qtmetamacros.h>
 
-StartScreen::StartScreen(QWidget* parent) : Scene(parent) {
+
+StartScreen::StartScreen(QWidget* parent) : SceneWidget(parent) {
   mLayout       = new QGridLayout(this);
   QLabel* title = new QLabel("人生模拟器", this);
   mLayout->addWidget(title, 0, 1);

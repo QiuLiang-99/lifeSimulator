@@ -9,7 +9,7 @@
 #include <qlabel.h>
 #include <qpushbutton.h>
 
-MainScreen::MainScreen(QWidget* parent) : Scene(parent) {
+MainScreen::MainScreen(QWidget* parent) : SceneWidget(parent) {
   setupUI();
   setupConnect();
   // 文字居中 text-align:center;

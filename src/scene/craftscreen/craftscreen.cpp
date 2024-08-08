@@ -1,7 +1,7 @@
 #include "craftscreen.h"
 #include <qlabel.h>
 
-CraftScreen::CraftScreen(QWidget* parent) : Scene(parent) {
+CraftScreen::CraftScreen(QWidget* parent) : SceneWidget(parent) {
   layout = new QVBoxLayout;
   setLayout(layout);
   scrollArea = new QScrollArea;

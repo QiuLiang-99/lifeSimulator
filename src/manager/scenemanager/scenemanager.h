@@ -6,7 +6,7 @@
 #include "scene/mainwindow.h"
 #include <QHash>
 
-class Scene;
+#include "scene/scene.h"
 class SceneManager : public Manager {
     Q_OBJECT
 
@@ -18,8 +18,8 @@ class SceneManager : public Manager {
     void showScene(const E_scene&);
 
   private:
-    Scene* getScene(const E_scene&);
-    void   switchScene(Scene*);
+    SceneWidget* getScene(const E_scene&);
+    void         switchScene(SceneWidget*);
   signals:
 
   protected:
@@ -29,7 +29,7 @@ class SceneManager : public Manager {
   private:
     MainWindow& mainWindow_;
     // currentScene
-    using SceneFactory = std::function<Scene*()>;
+    using SceneFactory = std::function<SceneWidget*()>;
     QHash<E_scene, SceneFactory> SceneMap;
 };
 #endif // __SCENEMANAGER_H__
